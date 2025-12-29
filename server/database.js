@@ -3,7 +3,7 @@ dotenv.config();
 const mongoose = require('mongoose')
 
 const databaseconnection = async ()=>{
-mongoose.connect("mongodb://localhost:27017/bookstore")
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     console.log("Database connected Successfully");
 })
