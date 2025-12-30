@@ -16,7 +16,9 @@ app.get("/", (req,res) => {
 
 app.use('/book',bookRouter)
 
-app.listen(8000, ()=>{
-    console.log('Port Listening on 8000');
+// app.listen(8000, ()=>{
+//     console.log('Port Listening on 8000');
 
-} )
+// } )
+
+module.exports = app;
