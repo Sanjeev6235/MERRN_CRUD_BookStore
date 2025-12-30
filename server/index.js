@@ -7,7 +7,10 @@ databaseconnection();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://merrn-crud-book-store-3vir.vercel.app",
+  credentials: true
+}));
 
 app.get("/", (req,res) => {
     res.send('Hello');
