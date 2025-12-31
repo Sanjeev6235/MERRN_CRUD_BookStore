@@ -85,7 +85,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const { data } = await baseBookUrl.post("/deletebook", { Id: id });
+      const { data } = await baseBookUrl.post(`/deletebook/${id}`);
       if (data?.Success) {
         getAllBookList();
       }

@@ -17,7 +17,7 @@ app.get("/", (req,res) => {
 
 })
 
-app.use('/book',bookRouter)
+app.use('/',bookRouter)
 
 // app.listen(8000, ()=>{
 //     console.log('Port Listening on 8000');

@@ -6,7 +6,7 @@ const router = express.Router();
 //http://localhost:8000/book/addbook
 router.post ('/addbook',handleBookStoreController);
 router.get('/booklists',handleBookListController);
-router.post('/deletebook',handleDeleteController);
+router.delete('/deletebook/:id',handleDeleteController);
 router.put('/updatebook',handleUpdateBookController);
 
 module.exports = router
