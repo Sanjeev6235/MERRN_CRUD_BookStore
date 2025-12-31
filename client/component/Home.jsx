@@ -17,7 +17,7 @@ const Home = () => {
 
   const getAllBookList = async () => {
     try {
-      const { data } = await baseBookUrl.get("booklists");
+      const { data } = await baseBookUrl.get("/book/booklists");
       setBooklist(data?.BookList);
     } catch (error) {
       console.log(error);
@@ -48,7 +48,7 @@ const Home = () => {
         ) {
           alert("All fileds are required");
         }
-        const { data } = await baseBookUrl.post("/addbook", bookForm);
+        const { data } = await baseBookUrl.post("/book/addbook", bookForm);
         if (data?.Success) {
           getAllBookList();
           console.log("Data created successfully");
@@ -62,7 +62,7 @@ const Home = () => {
           });
         }
       } else {
-        const { data } = await baseBookUrl.put("/updatebook", bookForm);
+        const { data } = await baseBookUrl.put("/book/updatebook", bookForm);
         if (data?.Success) {
           getAllBookList();
           console.log("Data created successfully");
@@ -85,7 +85,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const { data } = await baseBookUrl.post(`/deletebook/${id}`);
+      const { data } = await baseBookUrl.post(`/book/deletebook/${id}`);
       if (data?.Success) {
         getAllBookList();
       }

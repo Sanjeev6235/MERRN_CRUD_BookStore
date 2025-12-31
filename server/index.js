@@ -12,7 +12,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.get("/", (req,res) => {
+app.get("/book", (req,res) => {
     res.send('Hello');
 
 })
