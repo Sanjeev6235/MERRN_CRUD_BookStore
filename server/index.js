@@ -8,9 +8,13 @@ databaseconnection();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://merrn-crud-book-store-3vir.vercel.app",
-  credentials: true
-}));
+    origin: [
+      "http://localhost:5173", // local frontend
+      "https://merrn-crud-book-store-3vir.vercel.app" // vercel frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }));
 
 app.get("/", (req,res) => {
     res.send('Hello');
@@ -19,9 +23,8 @@ app.get("/", (req,res) => {
 
 app.use('/book',bookRouter)
 
-app.listen(8000, ()=>{
-    console.log('Port Listening on 8000');
-
-} )
+// app.listen(8000, ()=>{
+//     console.log('Port Listening on 8000');
+// } )
 
 module.exports = app;

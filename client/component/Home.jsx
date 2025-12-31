@@ -85,7 +85,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const { data } = await baseBookUrl.delete("/book/deletebook",{ Id: id });
+      const { data } = await baseBookUrl.post("/book/deletebook", { Id: id });
       if (data?.Success) {
         getAllBookList();
       }
@@ -206,7 +206,7 @@ const Home = () => {
             <th className="border border-gray-400 py-2  px-4 text-left ">
               Publish Date
             </th>
-            <th className="border border-gray-400 py-2  px-4 text-left ">
+            <th className="border border-gray-400 py-2  px-4 text-center ">
               Actions
             </th>
           </tr>
@@ -215,22 +215,22 @@ const Home = () => {
           {booklist.map((book, idx) => {
             return (
               <tr key={idx}>
-                <td className="border border-gray-400 py-2  px-4 text-left ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left ">
                   {book.BookName}
                 </td>
-                <td className="border border-gray-400 py-2  pl-4 pr-1 text-left ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left ">
                   {book.BookTitle}
                 </td>
-                <td className="border border-gray-400 py-2  px-4 text-left ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left ">
                   {book.BookAuthor}
                 </td>
-                <td className="border border-gray-400 py-2  px-4 text-left ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left ">
                   {book.SellingPrice}
                 </td>
-                <td className="border border-gray-400 py-2  px-4 text-left ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left ">
                   {book.PublishDate}
                 </td>
-                <td className="border border-gray-400 py-2  px-4 text-left flex justify-evenly ">
+                <td className="border border-gray-400 py-2  pl-2 pr-1 text-left flex justify-evenly ">
                   <button
                     onClick={() => handleUpdate(book)}
                     className="bg-green-500 px-2 py-1 text-white rounded"
