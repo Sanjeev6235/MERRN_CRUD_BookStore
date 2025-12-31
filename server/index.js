@@ -12,16 +12,16 @@ app.use(cors({
   credentials: true
 }));
 
-app.get("/book", (req,res) => {
+app.get("/", (req,res) => {
     res.send('Hello');
 
 })
 
-app.use('/',bookRouter)
+app.use('/book',bookRouter)
 
-// app.listen(8000, ()=>{
-//     console.log('Port Listening on 8000');
+app.listen(8000, ()=>{
+    console.log('Port Listening on 8000');
 
-// } )
+} )
 
 module.exports = app;
