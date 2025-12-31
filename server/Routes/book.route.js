@@ -10,7 +10,7 @@ router.get("/test", (req, res) => {
 //http://localhost:8000/book/addbook
 router.post ('/addbook',handleBookStoreController);
 router.get('/booklists',handleBookListController);
-router.delete('/deletebook/:id',handleDeleteController);
+router.delete('/deletebook',handleDeleteController);
 router.put('/updatebook',handleUpdateBookController);
 
 module.exports = router

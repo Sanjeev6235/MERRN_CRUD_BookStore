@@ -85,7 +85,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      const { data } = await baseBookUrl.post("/book/deletebook",{ Id: id });
+      const { data } = await baseBookUrl.delete("/book/deletebook",{ Id: id });
       if (data?.Success) {
         getAllBookList();
       }
@@ -218,7 +218,7 @@ const Home = () => {
                 <td className="border border-gray-400 py-2  px-4 text-left ">
                   {book.BookName}
                 </td>
-                <td className="border border-gray-400 py-2  px-4 text-left ">
+                <td className="border border-gray-400 py-2  pl-4 pr-1 text-left ">
                   {book.BookTitle}
                 </td>
                 <td className="border border-gray-400 py-2  px-4 text-left ">
