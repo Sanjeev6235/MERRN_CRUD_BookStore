@@ -50,8 +50,7 @@ const handleBookListController = async (req, res) => {
 const handleDeleteController = async (req,res)=>{
   try {
     const body = req.body;
-    const {id}=req.prams;
-    const bookDeleted = await Book.deleteOne({_id:id});
+    const bookDeleted = await Book.deleteOne({_id:body.Id});
     if(bookDeleted.acknowledged){
       res.status(200).json({Message:"Book Deleted successfully",Success:true})
     }
