@@ -108,7 +108,7 @@ const Home = () => {
     <div className="w-full h-screen ">
       <div className="w-full bg-blue-300">
         <h1 className=" text-3xl text-center font-semibold p-6">
-          CRUD Operation Using MERN
+            BOOKSTORE
         </h1>
       </div>
       <div>
